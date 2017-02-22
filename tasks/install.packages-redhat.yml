@@ -14,6 +14,7 @@
   get_url:
     url: https://repo.powerdns.com/repo-files/{{ansible_distribution | lower()}}-auth-{{pdns_repo_branch}}.repo
     dest: /etc/yum.repos.d/powerdns-auth-{{pdns_repo_branch}}.repo
+    validate_certs: False
   when: pdns_repo_provider == "powerdns"
 
 - name: Install epel-release
